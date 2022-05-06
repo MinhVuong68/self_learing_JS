@@ -1,10 +1,6 @@
-var boxElement = document.querySelector('.box');
-
-// add
 setTimeout(()=>{
-    boxElement.classList.add('red');
+    var headingText = document.querySelector('h1');
+    headingText.setAttribute('class','text-red')
 },3000)
 
-setInterval(()=>{
-    boxElement.classList.toggle('red')
-},1000)
+
