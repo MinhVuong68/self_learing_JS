@@ -249,9 +249,9 @@ var courses = [
      }
  ]
 
- var newCourses = topic.reduce(function(coureses,topic){
-    return coureses.concat(topic.courses)
- },[])
+ 
+ var newCourses = topic.reduce((coureses,topic) => coureses.concat(topic.courses)
+ ,[])
 
  var htmls = newCourses.map(function(course){
      return `
