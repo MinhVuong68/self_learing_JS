@@ -10,20 +10,20 @@ html {
     font-family: "Open Sans", sans-serif;
 }
 
+
 .main {
-    background: #f1f1f1;
+    background-color: #f1f1f1;
     min-height: 100vh;
     display: flex;
     justify-content: center;
 }
-
 
 .form {
     width: 360px;
     min-height: 100px;
     padding: 32px 24px;
     text-align: center;
-    background: #fff;
+    background-color: #fff;
     border-radius: 2px;
     margin: 24px;
     align-self: center;
@@ -46,7 +46,7 @@ html {
 
 .form-group {
     display: flex;
-    margin-bottom: 16px;
+    margin-top: 16px;
     flex-direction: column;
 }
 
@@ -54,6 +54,7 @@ html {
 .form-message {
     text-align: left;
 }
+
 
 .form-label {
     font-weight: 700;
@@ -72,7 +73,7 @@ html {
 }
 
 .form-control:hover {
-    border-color: #1dbfaf;
+    border-color: #1dbfaf; 
 }
 
 .form-group.invalid .form-control {
@@ -84,9 +85,8 @@ html {
     color: #f33a58;
 }
 
-
 .form-message {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.6rem;
     padding: 4px 0 0;
 }
@@ -112,5 +112,3 @@ html {
 .spacer {
     margin-top: 36px;
 }
-
-

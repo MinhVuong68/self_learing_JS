@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+    <title>Form-Regis</title>
+</head>
+<body>
+    <div class="main">
+        <form action="" class="form" id="form-1" method="POST">
+            <h3 class="heading">THÔNG TIN ĐĂNG KÝ</h3>
+            <p class="desc">Cùng nhau nổ lực, cùng nhau phát triển</p>
+            <div class="spacer"></div>
+            <div class="form-group">
+                <label for="fullname" class="form-label">Họ và tên:</label>
+                <input type="text" name="fullname" id="fullname" placeholder="VD: Nguyễn Minh Vương" class="form-control">
+                <div class="form-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" name="email" id="email" placeholder="VD: minhvuong@gmail.com" class="form-control">
+                <div class="form-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu:</label>
+                <input type="password" name="password" id="password" class="form-control">
+                <div class="form-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="password-again" class="form-label">Nhập lại mật khẩu:</label>
+                <input type="password" name="password-again" id="password-again" class="form-control">
+                <div class="form-message"></div>
+            </div>
+            <button class="form-submit">Đăng ký</button>
+        </form>
+    </div>
+    <script>
+        Validator({
+            form: "#form-1",
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isFullName('#fullname'),
+                Validator.isEmail('#email'),
+                Validator.isPassword('#password',8)
+            ]
+        })
+    </script>
+</body>
+</html>
