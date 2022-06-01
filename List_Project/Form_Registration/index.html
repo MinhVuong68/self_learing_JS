@@ -42,9 +42,14 @@
             form: "#form-1",
             errorSelector: '.form-message',
             rules: [
-                Validator.isFullName('#fullname'),
+                Validator.isRequired('#fullname','Vui lòng nhập tên đầy đủ của bạn!'),
+                Validator.isRequired('#email'),
                 Validator.isEmail('#email'),
-                Validator.isPassword('#password',8)
+                Validator.minLength('#password',8),
+                Validator.isRequired('#password-again'),
+                Validator.isConfirmed('#password-again',function(){
+                    return document.querySelector('#form-1 #password').value
+                },'Mật khẩu nhập lại không chính xác')
             ]
         })
     </script>
