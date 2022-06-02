@@ -50,7 +50,10 @@
                 Validator.isConfirmed('#password-again',function(){
                     return document.querySelector('#form-1 #password').value
                 },'Mật khẩu nhập lại không chính xác')
-            ]
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
         })
     </script>
 </body>

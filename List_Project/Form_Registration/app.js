@@ -18,14 +18,34 @@ function Validator(options) {
             errorElement.innerText = ''
             inputElement.parentElement.classList.remove('invalid')
         }
+        return !errorMessage
     }
     var formElement = document.querySelector(options.form)
+    //Khi submit form
     formElement.onsubmit = function(e) {
         e.preventDefault()
+
+        var isFormValid = true
         options.rules.forEach((rule) => {
             var inputElement = formElement.querySelector(rule.selector)
-            Validate(inputElement,rule)
+            var isValid = Validate(inputElement,rule)
+            if(!isValid) {
+                isFormValid = false
+            }
         })
+
+        if(isFormValid) {
+            if(typeof options.onSubmit === 'function') {
+                var enableInputs = formElement.querySelectorAll('[name]:not([disabled])')   
+                console.log(enableInputs)
+                var formValues = Array.from(enableInputs).reduce(function (values,input){
+                     return (values[input.name] = input.value) && values
+                },{})
+                options.onSubmit(formValues)
+            }else {
+                formElement.submit()
+            }
+        }
     }
     if(formElement) {
         options.rules.forEach((rule) => {
